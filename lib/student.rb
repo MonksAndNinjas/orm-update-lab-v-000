@@ -31,13 +31,19 @@ class Student
   end
 
   def save
-    sql = <<-SQL
-    INSERT INTO students (name, grade)
-    VALUES (?, ?)
-    SQL
+    if condition
+      
+    else  
+      sql = <<-SQL
+      INSERT INTO students (name, grade)
+      VALUES (?, ?)
+      SQL
 
-    DB[:conn].execute(sql, self.name, self.grade)
-    @id = DB[:conn].execute("SELECT MAX(id) FROM students")[0][0]
+      DB[:conn].execute(sql, self.name, self.grade)
+      @id = DB[:conn].execute("SELECT MAX(id) FROM students")[0][0]
+    end
   end
+
+  
 
 end
