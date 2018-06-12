@@ -37,7 +37,7 @@ class Student
     SQL
 
     DB[:conn].execute(sql, self.name, self.grade)
-    @id = DB[:conn].execute("SELECT MAX(id) FROM students")[0][0]
+    @id = DB[:conn].execute("SELECT MAX(id) FROM students")
   end
 
 end
