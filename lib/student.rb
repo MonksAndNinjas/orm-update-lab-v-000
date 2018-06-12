@@ -31,9 +31,9 @@ class Student
   end
 
   def save
-    if condition
-      
-    else  
+    if self.id
+      self.update
+    else
       sql = <<-SQL
       INSERT INTO students (name, grade)
       VALUES (?, ?)
@@ -44,6 +44,6 @@ class Student
     end
   end
 
-  
+
 
 end
