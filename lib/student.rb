@@ -44,6 +44,10 @@ class Student
     end
   end
 
+  def self.update
+    
+  end
+
 
 
 end
